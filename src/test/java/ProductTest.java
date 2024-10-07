@@ -22,7 +22,7 @@ public class ProductTest {
 
 
     @Test
-    public void shouldFindById() {
+    public void shouldFindById() throws Exception {
         Product expected = product2;
         Product actual = repository.findById(77);
 
@@ -30,7 +30,7 @@ public class ProductTest {
     }
 
     @Test
-    public void shouldNotFindById() {
+    public void shouldNotFindById() throws Exception {
         Product expected = null;
 
         // not existed id
@@ -62,5 +62,17 @@ public class ProductTest {
         String actual = exception.getMessage();
 
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindAll() {
+        int expected = 5;
+
+        Product[] countPoducts = repository.findAll();
+        int actual = countPoducts.length;
+
+        Assertions.assertEquals(actual, expected);
+
+
     }
 }

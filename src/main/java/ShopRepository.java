@@ -42,7 +42,7 @@ public class ShopRepository {
         products = tmp;
     }
 
-    public Product findById(int id) {
+    public Product findById(int id) throws Exception{
         for (Product product : products) {
             if (product.getId() == id) {
                return product;
