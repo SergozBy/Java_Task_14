@@ -73,6 +73,9 @@
                                     </limits>
                                 </rule>
                             </rules>
+                            <excludes>
+                                <exclude>**/Product.class</exclude>
+                            </excludes>
                         </configuration>
                     </execution>
                 </executions>
